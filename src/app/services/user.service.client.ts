@@ -14,4 +14,9 @@ export class UserServiceClient {
     });
   }
 
+  currentUser = () =>
+    fetch('http://localhost:3000/api/currentUser', {
+      credentials: 'include'
+    }).then(response => response.json())
+
 }
