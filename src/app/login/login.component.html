@@ -1,0 +1,21 @@
+<div>
+  <h2>
+    Login
+  </h2>
+
+  <input  [(ngModel)]="username"
+          class="form-control"
+          placeholder="alice"/>
+
+  <input  [(ngModel)]="password"
+          class="form-control"
+          placeholder="********"
+          type="password"/>
+
+  <button class="btn btn-outline-primary"
+          (click)="login(username, password)">
+    Login
+  </button>
+
+  <p>Hello, you are {{username}}</p>
+</div>
