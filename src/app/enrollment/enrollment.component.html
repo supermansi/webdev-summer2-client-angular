@@ -1,0 +1,14 @@
+<h2>
+  Enrollment
+</h2>
+
+<ul class="list-group">
+  <li class="list-group-item"
+      *ngFor="let section of sections">
+    Course {{section.courseId}} - Section {{section.title}}
+    <button class="btn btn-outline-success float-right"
+            (click)="enroll(section._id)">
+      Enroll
+    </button>
+  </li>
+</ul>

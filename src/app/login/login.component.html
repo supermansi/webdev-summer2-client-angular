@@ -1,14 +1,23 @@
-<div>
+<div class="container col-5">
+
   <h2>
     Login
   </h2>
 
+  <label for="username">
+    Username
+  </label>
   <input  [(ngModel)]="username"
           class="form-control"
+          id="username"
           placeholder="alice"/>
 
+  <label for="password">
+    Password
+  </label>
   <input  [(ngModel)]="password"
           class="form-control"
+          id="password"
           placeholder="********"
           type="password"/>
 
@@ -17,5 +26,5 @@
     Login
   </button>
 
-  <p>Hello, you are {{username}}</p>
+  <!--<p>Hello, you are {{username}}</p>-->
 </div>

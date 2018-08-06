@@ -23,4 +23,12 @@ export class SectionServiceClient {
     return fetch('http://localhost:3000/api/course/' + courseId + '/section')
       .then(response => response.json());
   }
+
+  enroll(sectionId) {
+    return fetch('http://localhost:3000/api/section' + sectionId + '/enroll', {
+      method: 'PUT',
+      credentials: 'include'
+      }
+    ).then(response => response.json());
+  }
 }
