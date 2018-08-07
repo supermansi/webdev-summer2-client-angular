@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {UserServiceClient} from '../services/user.service.client';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -8,9 +9,17 @@ import {UserServiceClient} from '../services/user.service.client';
 })
 export class ProfileComponent implements OnInit {
 
-  currentUser = {}
+  currentUser = {
+    _id: '',
+    username: '',
+    firstName: '',
+    lastName: '',
+    email: '',
+    address: ''
+  }
 
-  constructor(private userServiceClient: UserServiceClient) { }
+  constructor(private userServiceClient: UserServiceClient,
+              private router: Router) { }
 
   ngOnInit() {
     this.userServiceClient.currentUser()
@@ -18,6 +27,20 @@ export class ProfileComponent implements OnInit {
           console.log(user);
           this.currentUser = user;
         });
+  }
+
+  updateUser() {
+    this.userServiceClient
+      .updateUser(this.currentUser)
+      .then(u => {
+        alert('Profile successfully updated!');
+        this.router.navigate(['profile']);
+      });
+  }
+
+  logout() {
+    this.userServiceClient.logout()
+      .then(() => this.router.navigate(['login']));
   }
 
 }

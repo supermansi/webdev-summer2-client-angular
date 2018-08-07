@@ -8,6 +8,7 @@
     Username
   </label>
   <input  placeholder="alice"
+          [(ngModel)] = "username"
           id="username"
           class="form-control"/>
 
@@ -15,6 +16,7 @@
     Password
   </label>
   <input  placeholder="********"
+          [(ngModel)] = "password"
           id="password"
           class="form-control">
 
@@ -22,10 +24,12 @@
     Verify Password
   </label>
   <input  placeholder="********"
+          [(ngModel)] = "password2"
           id="password2"
           class="form-control">
 
-  <button class="btn btn-outline-primary">
+  <button class="btn btn-outline-primary"
+          (click)="register(username, password, password2)">
     Register
   </button>
 

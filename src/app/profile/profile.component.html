@@ -1,3 +1,64 @@
-<p>
-  Welcome {{currentUser.username}}!
-</p>
+<div class="container row">
+
+  <div class="col-6">
+
+    <h2>User Profile</h2>
+
+    <button class="btn btn-outline-danger float-right"
+            (click)="logout()">
+      Logout
+    </button> <br/>
+
+    <label for="username">
+      Username
+    </label>
+    <input class="form-control"
+           [(ngModel)] = "currentUser.username"
+           id="username"/>
+
+    <label for="firstName">
+      First Name
+    </label>
+    <input class="form-control"
+           [(ngModel)] = "currentUser.firstName"
+           id="firstName"/>
+
+    <label for="lastName">
+      Last Name
+    </label>
+    <input class="form-control"
+           [(ngModel)] = "currentUser.lastName"
+           id="lastName"/>
+
+    <label for="email">
+      E-mail
+    </label>
+    <input class="form-control"
+           [(ngModel)] = "currentUser.email"
+           id="email"/>
+
+    <label for="address">
+      Address
+    </label>
+    <input class="form-control"
+           [(ngModel)] = "currentUser.address"
+           id="address"/><br/>
+
+    <button class="btn btn-outline-info float-right"
+            (click)="updateUser()">
+      Update
+    </button>
+
+  </div>
+
+  <div class="col-6">
+
+    <h2>Courses Enrolled</h2>
+
+    <h2>Sections Enrolled</h2>
+
+    {{currentUser.sections}}
+
+  </div>
+
+</div>
