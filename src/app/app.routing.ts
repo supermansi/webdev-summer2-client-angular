@@ -5,9 +5,13 @@ import {RegisterComponent} from './register/register.component';
 import {ProfileComponent} from './profile/profile.component';
 import {SectionsComponent} from './sections/sections.component';
 import {EnrollmentComponent} from './enrollment/enrollment.component';
+import {CourseGridComponent} from './course-grid/course-grid.component';
 
 const appRoutes: Routes = [
   {path: 'courses', component: CourseNavigatorComponent},
+  {path: 'course/:courseId', component: CourseNavigatorComponent},
+  {path: 'course/:courseId/section', component: SectionsComponent},
+  {path: 'grid', component: CourseGridComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'profile', component: ProfileComponent},

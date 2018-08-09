@@ -1,6 +1,6 @@
 <div class="row">
 
-  <div class="col-6">
+  <!--<div class="col-6">
     <ul class="list-group">
       <li class="list-group-item active">
         Courses
@@ -31,6 +31,41 @@
       <li class = "list-group-item"
           *ngFor = "let section of sections">
          {{section.title}}
+      </li>
+    </ul>
+  </div>-->
+
+
+  <div class="col-6">
+    <ul class="list-group">
+      <li class="list-group-item active">
+        Sections for {{selectedCourse.id}}
+
+      </li>
+      <li class="list-group-item">
+        <input class="form-control col-10"
+               placeholder="Section Name"
+               [(ngModel)]="section.title"/>
+        <input class="form-control col-10"
+               placeholder="Section Seats"
+               [(ngModel)]="section.seats"/>
+        <button class="btn btn-outline-info float-right"
+                (click)="addSection(section)">
+        Add
+      </button>
+      </li>
+
+      <li class = "list-group-item"
+          *ngFor = "let section of sections">
+        {{section.title}}
+        <br>
+        Seats remaining - {{section.seats}}
+        <span class="float-right">
+          <button class="btn btn-outline-success"
+                  (click)="enroll(section)">
+            Enroll
+          </button>
+        </span>
       </li>
     </ul>
   </div>

@@ -25,7 +25,7 @@ export class SectionServiceClient {
   }
 
   enroll(sectionId) {
-    return fetch('http://localhost:3000/api/section' + sectionId + '/enroll', {
+    return fetch('http://localhost:3000/api/section/' + sectionId + '/enroll', {
       method: 'PUT',
       credentials: 'include'
       }

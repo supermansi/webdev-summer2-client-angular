@@ -1,0 +1,23 @@
+<div class="card-deck">
+
+  <div class="card"
+       *ngFor = "let course of courses">
+
+    <div class="card-body">
+      <h4 class="card-title">{{course.title}}</h4>
+      <p class="card-text">
+        Some quick example text to build on the card title
+        and make up the bulk of the card's content.
+      </p>
+      <a class="btn btn-outline-primary"
+              routerLink="/course/{{course.id}}">
+        View
+      </a>
+      <a class="btn btn-outline-success float-right"
+          routerLink="/course/{{course.id}}/section">
+        Enroll
+      </a>
+    </div>
+  </div>
+</div>
+
