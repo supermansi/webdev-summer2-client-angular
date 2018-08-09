@@ -43,9 +43,51 @@
           *ngFor="let topic of selectedLesson.topics">
         {{topic.title}}
       </li>
+
     </ul>
+
+    <div *ngFor="let widget of widgets">
+      <div [ngSwitch]="widget.widgetType">
+
+        <div *ngSwitchCase="'HEADING'">
+          <div [ngSwitch]="widget.size">
+            <h1 *ngSwitchCase="1">{{widget.title}}</h1>
+            <h2 *ngSwitchCase="2">{{widget.title}}</h2>
+            <h3 *ngSwitchCase="3">{{widget.title}}</h3>
+          </div>
+        </div>
+
+        <div *ngSwitchCase="'PARAGRAPH'">
+          <p>
+            {{widget.text}}
+          </p>
+        </div>
+
+        <div *ngSwitchCase="'LIST'">
+          <div [ngSwitch]="widget.ordered">
+
+            <ul *ngSwitchCase="0">
+              <li *ngFor="let item of widget.listItems.split('\n')">
+                {{item}}
+              </li>
+            </ul>
+
+            <ol *ngSwitchCase="1">
+              <li *ngFor="let item of widget.listItems.split('\n')">
+                {{item}}
+              </li>
+            </ol>
+
+          </div>
+        </div>
+
+        <div *ngSwitchCase="'IMAGE'">
+          <img src={{widget.url}} />
+        </div>
+
+      </div>
+    </div>
+
   </div>
-
-
 
 </div>

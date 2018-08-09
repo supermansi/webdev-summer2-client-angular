@@ -11,6 +11,7 @@ export class CourseNavigatorComponent implements OnInit {
 
   courses = [];
   modules = [];
+  widgets = [];
   selectedCourse = {};
   selectedModule = {};
   selectedLesson = {};
@@ -48,6 +49,12 @@ export class CourseNavigatorComponent implements OnInit {
 
   selectTopic(topic) {
     this.selectedTopic = topic;
+    this.courseService
+      .findWidgets(topic.id)
+      .then(widgets => {
+        this.widgets = widgets;
+        // console.log(this.widgets);
+      });
   }
 
   ngOnInit() {
