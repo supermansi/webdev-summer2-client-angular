@@ -12,10 +12,10 @@ export class EnrollmentComponent implements OnInit {
 
   constructor(private sectionService: SectionServiceClient) { }
 
-  enroll(sectionId) {
+/*  enroll(sectionId) {
     this.sectionService
       .enroll(sectionId);
-  }
+  }*/
 
   ngOnInit() {
     this.sectionService

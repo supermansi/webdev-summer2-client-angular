@@ -31,9 +31,9 @@ export class ProfileComponent implements OnInit {
       .then(user => {
           this.currentUser = user;
         });
-    if (this.currentUser.sections === []) {
+/*    if (this.currentUser.sections === []) {
       this.currentUser.sections = 'You are not enrolled in any courses yet! Click below to get started.';
-    }
+    }*/
   }
 
   updateUser() {

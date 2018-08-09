@@ -17,6 +17,7 @@ export class SectionsComponent implements OnInit {
     id: -1
   };
   section = {};
+  student;
 
   constructor(private courseService: CourseServiceClient,
               private sectionService: SectionServiceClient,
@@ -51,15 +52,21 @@ export class SectionsComponent implements OnInit {
   }
 
   enroll(section) {
-    // let studentId =
+    console.log(this.student._id);
+    console.log(section._id);
     this.sectionService
-      .enroll(section._id)
-      .then(() => this.router.navigate(['profile']));
+      .enroll(this.student._id, section._id)
+      .then((enrollment) => {
+        console.log(enrollment);
+        this.router.navigate(['profile']);
+      });
   }
 
   ngOnInit() {
     this.courseService.findAllCourses()
       .then(courses => this.courses = courses);
+    this.userService.currentUser()
+      .then(user => this.student = user);
   }
 
 }

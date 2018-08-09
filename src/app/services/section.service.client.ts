@@ -24,9 +24,9 @@ export class SectionServiceClient {
       .then(response => response.json());
   }
 
-  enroll(sectionId) {
-    return fetch('http://localhost:3000/api/section/' + sectionId + '/enroll', {
-      method: 'PUT',
+  enroll(studentId, sectionId) {
+    return fetch('http://localhost:3000/api/student/' + studentId + '/section/' + sectionId, {
+      method: 'POST',
       credentials: 'include'
       }
     ).then(response => response.json());
