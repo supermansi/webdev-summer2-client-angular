@@ -1,3 +1,61 @@
-<p>
-  admin-user works!
-</p>
+<h2>
+  Admin User
+
+  <a href="/" class="nav nav-link float-right">Home</a>
+
+</h2>
+
+<div class="row">
+
+  <div class="col-6">
+    <h3>
+      Courses
+    </h3>
+    <ul class="list-group">
+      <li class="list-group-item"
+          *ngFor="let course of courses"
+          (click)="showSections(course)">
+        {{course.title}}
+      </li>
+    </ul>
+
+  </div>
+
+  <div class="col-6">
+    <h3>
+      Sections for {{selectedCourse.title}}
+    </h3>
+    <ul class="list-group">
+      <li class = "list-group-item"
+          *ngFor = "let section of sections">
+        Section {{section.title}}
+        <br>
+        Seats remaining - {{section.seats}}
+        <button class="btn btn-outline-danger float-right"
+                (click)="deleteSection(section._id)">
+          Delete
+        </button>
+        <button class="btn btn-outline-warning float-right"
+                (click)="updateSection(section)">
+          Update
+        </button>
+      </li>
+      <li class="list-group-item">
+        <input class="form-control col-10"
+               placeholder="Section Name"
+               [(ngModel)]="section.title"/>
+        <input class="form-control col-10"
+               placeholder="Section Seats"
+               [(ngModel)]="section.seats"/>
+        <button class="btn btn-outline-info float-right"
+                (click)="addSection(section)"
+                [(ngModel)]="addBtn">
+          Add
+        </button>
+      </li>
+    </ul>
+  </div>
+
+
+</div>
+

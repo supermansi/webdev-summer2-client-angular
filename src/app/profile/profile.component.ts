@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {UserServiceClient} from '../services/user.service.client';
 import {Router} from '@angular/router';
+import {SectionServiceClient} from '../services/section.service.client';
+import {CourseServiceClient} from '../services/course.service.client';
 
 @Component({
   selector: 'app-profile',
@@ -15,10 +17,13 @@ export class ProfileComponent implements OnInit {
     firstName: '',
     lastName: '',
     email: '',
-    address: ''
+    address: '',
+    sections: []
   }
 
   constructor(private userServiceClient: UserServiceClient,
+              private sectionService: SectionServiceClient,
+              private courseService: CourseServiceClient,
               private router: Router) { }
 
   ngOnInit() {
@@ -26,6 +31,9 @@ export class ProfileComponent implements OnInit {
       .then(user => {
           this.currentUser = user;
         });
+    if (this.currentUser.sections === []) {
+      this.currentUser.sections = 'You are not enrolled in any courses yet! Click below to get started.';
+    }
   }
 
   updateUser() {

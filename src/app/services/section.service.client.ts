@@ -31,4 +31,15 @@ export class SectionServiceClient {
       }
     ).then(response => response.json());
   }
+
+  deleteSection(sectionId) {
+    return fetch('http://localhost:3000/api/section/' + sectionId, {
+      method: 'DELETE',
+      credentials: 'include'
+    });
+  }
+
+  updateSection(section) {
+
+  }
 }

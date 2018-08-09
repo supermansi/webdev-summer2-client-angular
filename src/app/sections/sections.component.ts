@@ -51,7 +51,7 @@ export class SectionsComponent implements OnInit {
   }
 
   enroll(section) {
-    let studentId =
+    // let studentId =
     this.sectionService
       .enroll(section._id)
       .then(() => this.router.navigate(['profile']));
