@@ -42,7 +42,14 @@
     </label>
     <input class="form-control"
            [(ngModel)] = "currentUser.address"
-           id="address"/><br/>
+           id="address"/>
+
+    <label for="phone">
+      Phone
+    </label>
+    <input class="form-control"
+           [(ngModel)] = "currentUser.phone"
+           id="phone"/><br/>
 
     <button class="btn btn-outline-info float-right"
             (click)="updateUser()">

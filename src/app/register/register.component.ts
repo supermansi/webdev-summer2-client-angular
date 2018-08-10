@@ -9,11 +9,35 @@ import {UserServiceClient} from '../services/user.service.client';
 })
 export class RegisterComponent implements OnInit {
 
+  username;
+  password;
+
   constructor(private router: Router,
               private userService: UserServiceClient) { }
 
   ngOnInit() {
   }
+
+  /*register(username, password, password2) {
+    if (password === password2) {
+      const user = {
+        username,
+        password
+      };
+      this.userService.register(user)
+        .then(u => {
+          console.log(u);
+          if ( u.status === 406) {
+            alert('The username is already taken!');
+          } else {
+            console.log(u);
+            this.router.navigate(['profile']);
+          }
+        });
+    } else {
+      alert('incorrect passwords!');
+    }
+  }*/
 
   register(username, password, password2) {
     if (password === password2) {

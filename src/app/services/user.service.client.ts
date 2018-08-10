@@ -28,7 +28,7 @@ export class UserServiceClient {
     return fetch('http://localhost:3000/api/profile', {
       credentials: 'include'
     }).then(response => {
-      //console.log(response.json());
+      // console.log(response.json());
       return response.json();
     });
   }
