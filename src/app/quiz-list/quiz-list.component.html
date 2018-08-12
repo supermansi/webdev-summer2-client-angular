@@ -1,11 +1,15 @@
-<h2>Quizzes</h2>
+<div class="container">
 
-<ul class="list-group">
+  <h2>Quizzes</h2>
 
-  <li class="list-group-item"
-      *ngFor="let quiz of quizzes">
-    {{quiz.title}}
-    <a href="/quiz/{{quiz._id}}">Take</a>
-  </li>
+  <ul class="list-group col-5">
 
-</ul>
+    <li class="list-group-item"
+        *ngFor="let quiz of quizzes">
+      {{quiz.title}}
+      <a href="/quiz/{{quiz._id}}" class="btn btn-outline-dark float-right">Take</a>
+    </li>
+
+  </ul>
+
+</div>

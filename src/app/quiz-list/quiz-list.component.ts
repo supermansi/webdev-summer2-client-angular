@@ -18,9 +18,8 @@ export class QuizListComponent implements OnInit {
 
   ngOnInit() {
     this.quizService
-      .createQuiz(this.q);
-/*      .findAllQuizzes()
-      .then(quizzes => this.quizzes = quizzes);*/
+      .findAllQuizzes()
+      .then(quizzes => this.quizzes = quizzes);
   }
 
 }

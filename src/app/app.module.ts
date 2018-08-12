@@ -17,6 +17,7 @@ import { EnrollmentComponent } from './enrollment/enrollment.component';
 import { AdminUserComponent } from './admin-user/admin-user.component';
 import { CourseGridComponent } from './course-grid/course-grid.component';
 import { QuizListComponent } from './quiz-list/quiz-list.component';
+import {QuizServiceClient} from './services/quiz.service.client';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { QuizListComponent } from './quiz-list/quiz-list.component';
   providers: [
     CourseServiceClient,
     UserServiceClient,
-    SectionServiceClient
+    SectionServiceClient,
+    QuizServiceClient
   ],
   bootstrap: [AppComponent]
 })

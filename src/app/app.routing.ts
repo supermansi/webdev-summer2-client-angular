@@ -11,6 +11,7 @@ import {QuizListComponent} from './quiz-list/quiz-list.component';
 
 const appRoutes: Routes = [
   {path: 'courses', component: CourseNavigatorComponent},
+  {path: 'quiz', component: QuizListComponent},
   {path: 'course/:courseId', component: CourseNavigatorComponent},
   {path: 'course/:courseId/section', component: SectionsComponent},
   {path: 'grid', component: CourseGridComponent},
@@ -20,7 +21,6 @@ const appRoutes: Routes = [
   {path: 'profile', component: ProfileComponent},
   {path: 'sections', component: SectionsComponent},
   {path: 'enrollment', component: EnrollmentComponent},
-  {path: 'quiz', component: QuizListComponent},
   {path: 'admin', component: AdminUserComponent}
 ];
 
