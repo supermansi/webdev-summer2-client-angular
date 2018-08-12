@@ -11,7 +11,10 @@ export class QuizServiceClient {
     fetch('http://localhost:3000/api/quiz')
       .then(response => response.json())
 
-  findQuizById = quizId => {}
+  findQuizById = quizId => {
+    return fetch('http://localhost:3000/api/quiz/' + quizId)
+      .then(response => response.json());
+  }
 
   updateQuiz = (quizId, quiz) => {}
 

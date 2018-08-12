@@ -18,6 +18,7 @@ import { AdminUserComponent } from './admin-user/admin-user.component';
 import { CourseGridComponent } from './course-grid/course-grid.component';
 import { QuizListComponent } from './quiz-list/quiz-list.component';
 import {QuizServiceClient} from './services/quiz.service.client';
+import { QuizTakerComponent } from './quiz-taker/quiz-taker.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import {QuizServiceClient} from './services/quiz.service.client';
     EnrollmentComponent,
     AdminUserComponent,
     CourseGridComponent,
-    QuizListComponent
+    QuizListComponent,
+    QuizTakerComponent
   ],
   imports: [
     BrowserModule,

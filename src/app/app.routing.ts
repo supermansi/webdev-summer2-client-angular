@@ -8,10 +8,12 @@ import {EnrollmentComponent} from './enrollment/enrollment.component';
 import {CourseGridComponent} from './course-grid/course-grid.component';
 import {AdminUserComponent} from './admin-user/admin-user.component';
 import {QuizListComponent} from './quiz-list/quiz-list.component';
+import {QuizTakerComponent} from './quiz-taker/quiz-taker.component';
 
 const appRoutes: Routes = [
   {path: 'courses', component: CourseNavigatorComponent},
   {path: 'quiz', component: QuizListComponent},
+  {path: 'quiz/:quizId', component: QuizTakerComponent},
   {path: 'course/:courseId', component: CourseNavigatorComponent},
   {path: 'course/:courseId/section', component: SectionsComponent},
   {path: 'grid', component: CourseGridComponent},
