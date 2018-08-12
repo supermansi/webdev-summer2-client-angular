@@ -7,6 +7,7 @@ import {SectionsComponent} from './sections/sections.component';
 import {EnrollmentComponent} from './enrollment/enrollment.component';
 import {CourseGridComponent} from './course-grid/course-grid.component';
 import {AdminUserComponent} from './admin-user/admin-user.component';
+import {QuizListComponent} from './quiz-list/quiz-list.component';
 
 const appRoutes: Routes = [
   {path: 'courses', component: CourseNavigatorComponent},
@@ -19,6 +20,7 @@ const appRoutes: Routes = [
   {path: 'profile', component: ProfileComponent},
   {path: 'sections', component: SectionsComponent},
   {path: 'enrollment', component: EnrollmentComponent},
+  {path: 'quiz', component: QuizListComponent},
   {path: 'admin', component: AdminUserComponent}
 ];
 
