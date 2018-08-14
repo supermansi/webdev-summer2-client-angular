@@ -3,7 +3,10 @@
   <li class="list-group-item"
       *ngFor="let choice of question.choices">
     <label>
-      <input name="choice" type="radio">{{choice.text}}
+      <input name="choice"
+             (click)="selected(choice)"
+             type="radio">
+      {{choice.text}}
     </label>
   </li>
 

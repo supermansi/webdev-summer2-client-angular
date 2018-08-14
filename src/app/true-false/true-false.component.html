@@ -1,7 +1,11 @@
 <label>
-  <input type="radio"> True
-  <br>
-  <input type="radio"> False
+  <input  name="{{question._id}}"
+          (click)="selected(true)"
+          type="radio"> True
 </label>
-
-<h2>{{question.title}}</h2>
+  <br>
+<label>
+  <input  name="{{question._id}}"
+          (click)="selected(false)"
+          type="radio"> False
+</label>

@@ -8,6 +8,9 @@ import {Component, Input, OnInit} from '@angular/core';
 export class TrueFalseComponent implements OnInit {
 
   @Input() question;
+  selected = trueOrFalse => {
+    this.question.trueFalseAnswer = trueOrFalse;
+  }
 
   constructor() { }
 
