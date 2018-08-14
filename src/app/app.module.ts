@@ -19,6 +19,10 @@ import { CourseGridComponent } from './course-grid/course-grid.component';
 import { QuizListComponent } from './quiz-list/quiz-list.component';
 import {QuizServiceClient} from './services/quiz.service.client';
 import { QuizTakerComponent } from './quiz-taker/quiz-taker.component';
+import { TrueFalseComponent } from './true-false/true-false.component';
+import { EssayComponent } from './essay/essay.component';
+import { FillBlanksComponent } from './fill-blanks/fill-blanks.component';
+import { MulitpleChoiceComponent } from './mulitple-choice/mulitple-choice.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +37,11 @@ import { QuizTakerComponent } from './quiz-taker/quiz-taker.component';
     AdminUserComponent,
     CourseGridComponent,
     QuizListComponent,
-    QuizTakerComponent
+    QuizTakerComponent,
+    TrueFalseComponent,
+    EssayComponent,
+    FillBlanksComponent,
+    MulitpleChoiceComponent
   ],
   imports: [
     BrowserModule,
