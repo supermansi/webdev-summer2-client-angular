@@ -23,6 +23,7 @@ import { TrueFalseComponent } from './true-false/true-false.component';
 import { EssayComponent } from './essay/essay.component';
 import { FillBlanksComponent } from './fill-blanks/fill-blanks.component';
 import { MulitpleChoiceComponent } from './mulitple-choice/mulitple-choice.component';
+import {SubmissionServiceClient} from './services/submission.service.client';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { MulitpleChoiceComponent } from './mulitple-choice/mulitple-choice.compo
     CourseServiceClient,
     UserServiceClient,
     SectionServiceClient,
-    QuizServiceClient
+    QuizServiceClient,
+    SubmissionServiceClient
   ],
   bootstrap: [AppComponent]
 })
