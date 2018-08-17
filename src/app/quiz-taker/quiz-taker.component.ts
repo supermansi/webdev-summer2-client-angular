@@ -17,7 +17,10 @@ export class QuizTakerComponent implements OnInit {
               private submissionService: SubmissionServiceClient) { }
 
   quizId = '';
-  quiz = {};
+  quiz = {
+    title: '',
+    questions: ''
+  };
   newQuiz = {
     student: null,
     quiz: null,

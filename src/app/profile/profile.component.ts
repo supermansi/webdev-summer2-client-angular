@@ -18,7 +18,8 @@ export class ProfileComponent implements OnInit {
     lastName: '',
     email: '',
     address: '',
-    sections: []
+    sections: [],
+    phone: null
   }
 
   constructor(private userServiceClient: UserServiceClient,

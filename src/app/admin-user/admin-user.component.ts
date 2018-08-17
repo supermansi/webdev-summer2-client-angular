@@ -14,7 +14,10 @@ export class AdminUserComponent implements OnInit {
   courses = [];
   sections = [];
   selectedCourse;
-  section = {};
+  section = {
+    title: '',
+    seats: ''
+  };
   addBtn;
 
   quizzes = {};
@@ -68,7 +71,10 @@ export class AdminUserComponent implements OnInit {
   }
 
   renderSections() {
-    this.section = {};
+    this.section = {
+      title: '',
+      seats: ''
+    };
     this.sectionService.findSectionsForCourse(this.selectedCourse.id)
       .then(sections => this.sections = sections);
   }

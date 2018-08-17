@@ -9,8 +9,9 @@ import {UserServiceClient} from '../services/user.service.client';
 })
 export class RegisterComponent implements OnInit {
 
-  username;
-  password;
+  username = '';
+  password = '';
+  password2 = '';
 
   constructor(private router: Router,
               private userService: UserServiceClient) { }

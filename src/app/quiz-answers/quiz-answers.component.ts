@@ -9,7 +9,9 @@ import {SubmissionServiceClient} from '../services/submission.service.client';
 })
 export class QuizAnswersComponent implements OnInit {
 
-  submission = {};
+  submission = {
+    answers: ''
+  };
   constructor(private router: ActivatedRoute,
               private submissionService: SubmissionServiceClient) { }
 
