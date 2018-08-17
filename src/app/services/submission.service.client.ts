@@ -14,4 +14,15 @@ export class SubmissionServiceClient{
     })
       .then(response => response.json());
   }
+
+  findSubmissionsForQuiz = quizId => {
+    return fetch('http://localhost:3000/api/quiz/' + quizId + '/submission')
+      .then(response => {
+        return response.json();
+      });
+  }
+
+  findSubmissionById = subId =>
+    fetch('http://localhost:3000/api/sub/' + subId)
+      .then(response => response.json())
 }

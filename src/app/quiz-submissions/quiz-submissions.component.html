@@ -1,0 +1,13 @@
+<ul class="list-group">
+  <li class="list-group-item"
+  *ngFor="let sub of submissions">
+    <span *ngFor="let s of sub.answers"
+          class="list-group-item">
+      <!--{{findStudent(s.student)._id}}-->
+      {{s.essayAnswer}}
+      {{s.trueFalseAnswer}}
+      {{s.multipleChoiceAnswer}}
+      {{s.fillBlanksAnswer}}
+    </span>
+  </li>
+</ul>

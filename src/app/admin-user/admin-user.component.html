@@ -19,6 +19,26 @@
       </li>
     </ul>
 
+    <button class="btn btn-outline-warning"
+            (click)="viewQuizzes()">
+      View All Quizzes
+    </button>
+    <div>
+
+      <ul class="list-group table-hover">
+        <li class="list-group-item"
+            *ngFor="let quiz of quizzes">
+          {{quiz.title}}
+          <button class="btn btn-info float-right"
+                  (click)="viewSubmissionsForQuiz(quiz._id)">
+            View Submissions
+          </button>
+
+        </li>
+      </ul>
+
+    </div>
+
   </div>
 
   <div class="col-6">
@@ -56,6 +76,6 @@
     </ul>
   </div>
 
-
 </div>
+
 

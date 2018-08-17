@@ -51,4 +51,8 @@ export class UserServiceClient {
     });
   }
 
+  findUserById = userId =>
+    fetch('http://localhost:3000/api/user/' + userId)
+      .then(response => response.json())
+
 }

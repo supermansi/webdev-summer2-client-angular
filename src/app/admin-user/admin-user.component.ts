@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {CourseServiceClient} from '../services/course.service.client';
 import {SectionServiceClient} from '../services/section.service.client';
 import {ActivatedRoute, Router} from '@angular/router';
+import {QuizServiceClient} from '../services/quiz.service.client';
 
 @Component({
   selector: 'app-admin-user',
@@ -16,8 +17,11 @@ export class AdminUserComponent implements OnInit {
   section = {};
   addBtn;
 
+  quizzes = {};
+
   constructor(private courseService: CourseServiceClient,
               private sectionService: SectionServiceClient,
+              private quizService: QuizServiceClient,
               private router: Router,
               private route: ActivatedRoute) { }
 
@@ -67,6 +71,16 @@ export class AdminUserComponent implements OnInit {
     this.section = {};
     this.sectionService.findSectionsForCourse(this.selectedCourse.id)
       .then(sections => this.sections = sections);
+  }
+
+  viewQuizzes() {
+    this.quizService
+      .findAllQuizzes()
+      .then(quizzes => this.quizzes = quizzes);
+  }
+
+  viewSubmissionsForQuiz = quizId => {
+    this.router.navigate(['/quiz/' + quizId + '/submissions']);
   }
 
 }
